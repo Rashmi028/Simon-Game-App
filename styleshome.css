@@ -14,6 +14,10 @@ body {
     background: linear-gradient(135deg, #ff4081, #81d4fa);
     font-family: 'Arial', sans-serif;
     color: white;
+    background-image: url("3430318.jpg");
+    background-repeat:no-repeat;
+
+    background-size:cover;
     overflow: hidden;
     position: relative;
 }
@@ -59,7 +63,7 @@ h1 {
     transform: perspective(500px) rotateX(10deg);
 }
 
-/* 3D Background Elements */
+/* 3D Background Elements
 body::before, body::after {
     content: '';
     position: absolute;
@@ -69,7 +73,7 @@ body::before, body::after {
     border-radius: 50%;
     filter: blur(100px);
     animation: float 10s infinite;
-}
+} */
 
 body::before {
     top: 10%;
