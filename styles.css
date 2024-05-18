@@ -1,29 +1,80 @@
 body {
   text-align: center;
-  background-color: rgb(179, 240, 243);
+  background: linear-gradient(135deg, #f8b195, #f67280, #c06c84, #6c5b7b, #355c7d);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+#level-title, #score {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #level-title {
-  font-family: 'Press Start 2P', fantasy;
   font-size: 3rem;
-  margin:  5%;
-  color: #ca1d8a;
+  margin: 5% 0;
+  color: #fff;
+}
+
+#score {
+  font-size: 1.5rem;
+  margin: 1% 0;
 }
 
 .container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   margin: auto;
+}
 
+.row {
+  display: flex;
 }
 
 .btn {
   margin: 10px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  height: 150px;
+  width: 150px;
+  border: 5px solid black;
+  border-radius: 15%;
+  box-shadow: 0 6px #666;
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px #666;
+}
+
+.red {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+}
+
+.green {
+  background: linear-gradient(45deg, #00ff00, #009900);
+}
+
+.blue {
+  background: linear-gradient(45deg, #0000ff, #000099);
+}
+
+.yellow {
+  background: linear-gradient(45deg, #ffff00, #cccc00);
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
 }
 
 .game-over {
@@ -31,23 +82,12 @@ body {
   opacity: 0.8;
 }
 
-.red {
-  background-color: rgb(219, 6, 6);
+@keyframes btnGlow {
+  0% { box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7); }
+  50% { box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1); }
+  100% { box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7); }
 }
 
-.green {
-  background-color: rgb(39, 160, 39);
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+.btn:hover {
+  animation: btnGlow 1s infinite;
 }
